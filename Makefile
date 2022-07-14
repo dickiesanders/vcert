@@ -80,10 +80,10 @@ collect_artifacts:
 	zip -j "artifacts/vcert_$(VERSION)_darwin_arm.zip" "bin/darwin/vcert_arm" || exit 1
 	zip -j "artifacts/vcert_$(VERSION)_windows.zip" "bin/windows/vcert.exe" || exit 1
 	zip -j "artifacts/vcert_$(VERSION)_windows86.zip" "bin/windows/vcert86.exe" || exit 1
-	cp vcert_linux.sig artifacts/
-	cp vcert_linux86.sig artifacts/
-	cp vcert_darwin.sig artifacts/
-	cp vcert_darwin_arm.sig artifacts/
+	#cp vcert_linux.sig artifacts/
+	#cp vcert_linux86.sig artifacts/
+	#cp vcert_darwin.sig artifacts/
+	#cp vcert_darwin_arm.sig artifacts/
 
 release:
 	echo '```' > release.txt
