@@ -679,7 +679,7 @@ func parseBrowseIdentitiesResult(httpStatusCode int, httpStatus string, body []b
 		}
 		return browseIdentitiesResponse, nil
 	default:
-		return browseIdentitiesResponse, fmt.Errorf("Unexpected status code on TPP Browse Identities. Status: %s", httpStatus)
+		return browseIdentitiesResponse, verror.VCertTPPBrowseIdentitiesError{Status: httpStatus}
 	}
 }
 
@@ -698,7 +698,7 @@ func parseValidateIdentityResponse(httpStatusCode int, httpStatus string, body [
 		}
 		return validateIdentityResponse, nil
 	default:
-		return validateIdentityResponse, fmt.Errorf("Unexpected status code on TPP Validate Identity. Status: %s", httpStatus)
+		return validateIdentityResponse, verror.VCertTPPValidateIdentityError{Status: httpStatus}
 	}
 }
 
