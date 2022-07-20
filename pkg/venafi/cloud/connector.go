@@ -801,7 +801,7 @@ func (c *Connector) getCertificateStatus(requestID string) (certStatus *certific
 	}
 	respErrors, err := parseResponseErrors(body)
 	if err == nil {
-		respError := fmt.Sprintf("Unexpected status code on Venafi Cloud certificate search. Status: %d\n", statusCode)
+		respError := fmt.Sprintf("unexpected status code on VaaS certificate search. Status: %d\n", statusCode)
 		for _, e := range respErrors {
 			respError += fmt.Sprintf("Error Code: %d Error: %s\n", e.Code, e.Message)
 		}
@@ -1313,7 +1313,7 @@ func (c *Connector) getCertificate(certificateId string) (*managedCertificate, e
 		if body != nil {
 			respErrors, err := parseResponseErrors(body)
 			if err == nil {
-				respError := fmt.Sprintf("unexpected status code on Venafi Cloud certificate search. Status: %d\n", statusCode)
+				respError := fmt.Sprintf("unexpected status code on VaaS certificate search. Status: %d\n", statusCode)
 				for _, e := range respErrors {
 					respError += fmt.Sprintf("Error Code: %d Error: %s\n", e.Code, e.Message)
 				}
